@@ -10,9 +10,9 @@ echo "Below are IAM users"
 
 aws iam list-users | jq '.Users[].UserName'
 
-echo "Below are ec2 instances"
+echo "Below are active ec2 instances"
 
-aws ec2 describe-instance-status
+aws ec2 describe-instance-status | jq '.InstanceStatuses[].InstanceId'
 
 
 
