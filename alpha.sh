@@ -14,5 +14,10 @@ echo "Below are active ec2 instances"
 
 aws ec2 describe-instance-status | jq '.InstanceStatuses[].InstanceId'
 
+echo "Below are SG details"
+
+aws ec2 describe-security-groups | jq '.SecurityGroups[].GroupName'
+
+
 
 
